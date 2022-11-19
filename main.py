@@ -18,8 +18,8 @@ print(my_ip)
 
 def get_ip_location(my_ip):
 
-    geolocation_api = "0e89983e41344f97a25ae1804602f0ac"
-    ip_address = "206.116.135.77"
+    geolocation_api = "c885d1e061b2443baac7818aa66cde03"
+    ip_address = "206.87.160.200"
     request_url = 'https://ipgeolocation.abstractapi.com/v1/?api_key=' + geolocation_api + '&ip_address=' + ip_address
     response = requests.get(request_url)
     result = response.content.decode()
