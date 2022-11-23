@@ -15,7 +15,7 @@ class FindCity(object):
       context = {}
       my_ip = requests.get('https://api.ipify.org').text
       # print(my_ip)
-      geolocation_api = "0e89983e41344f97a25ae1804602f0ac"
+      geolocation_api = "c885d1e061b2443baac7818aa66cde03"
       # my_ip = "192.168.1.67"
       request_url = 'https://ipgeolocation.abstractapi.com/v1/?api_key=' + geolocation_api + '&ip_address=' + my_ip
       response = requests.get(request_url)
@@ -36,9 +36,9 @@ def upload(request):
    if request.method == 'POST':
       uploaded_file = request.FILES['upload']
       # manual location
-      if request.POST.get("get") == 'submit to local' or request.POST.get("get") == 'submit to cloud':
+      if request.POST.get("get") == 'submit to local drive' or request.POST.get("get") == 'submit to AWS':
          city = request.POST.get("city")
-         if request.POST.get("get") == 'submit to local':
+         if request.POST.get("get") == 'submit to local drive':
             path = os.path.expanduser("~")
             local_dir = os.path.join(path,"Documents")
             folder_check = os.path.isdir(local_dir)
@@ -47,7 +47,7 @@ def upload(request):
             # fs = FileSystemStorage(location=local_dir)
             name = fs.save(uploaded_file.name, uploaded_file)        
             messages.success(request, 'File saved successfully in Documents')
-         if request.POST.get("get") == 'submit to cloud':
+         if request.POST.get("get") == 'submit to AWS':
             upload = UploadFile.objects.create(file=uploaded_file)        
             messages.success(request, 'File saved successfully in S3 bucket')
       else:    
@@ -70,7 +70,7 @@ def upload(request):
                name = fs.save(uploaded_file.name, uploaded_file)        
                messages.success(request, 'File saved successfully in Documents')
             else:
-               messages.warning(request, 'City name not found and subit again')
+               messages.warning(request, 'City name not found and submit again')
          # context['url'] = fs.url(name)
 
          if value == "cloud":

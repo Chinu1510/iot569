@@ -151,9 +151,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AWS_ACCESS_KEY_ID = "your api key"
-AWS_SECRET_ACCESS_KEY ="your api access key"
-AWS_STORAGE_BUCKET_NAME = "your bucket name"
+#AWS_ACCESS_KEY_ID = "your api key"
+#AWS_SECRET_ACCESS_KEY ="your api access key"
+#AWS_STORAGE_BUCKET_NAME = "your bucket name"
+AWS_ACCESS_KEY_ID = "AKIAUWYB7M32E7QGPGGX"
+AWS_SECRET_ACCESS_KEY ="uNNsZ/BeTygk0qk7ksHXPYMNyMC31g/zBO+pPM2V"
+AWS_STORAGE_BUCKET_NAME = "pycharm-iot569-project"
+
+
+
 
 AWS_S3_FILE_OVERWRITE=False
 AWS_DEFAULT_ACL=None
