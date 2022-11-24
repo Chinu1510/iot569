@@ -1,0 +1,4 @@
+1) PyCharm Community Edition 2019.3.1
+2) Django
+3) Packages - Django storages, requests
+4) Internet Connection
